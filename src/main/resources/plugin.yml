@@ -7,5 +7,5 @@ website: https://github.com/NOOBNUBY/ResourceHost
 author: noobnuby
 
 libraries:
-  - org.jetbrains.kotlin:kotlin-stdlib:2.0.0
-  - org.jetbrains.kotlin:kotlin-reflect:2.0.0
+  - org.jetbrains.kotlin:kotlin-stdlib:2.0.20
+  - org.jetbrains.kotlin:kotlin-reflect:2.0.20
