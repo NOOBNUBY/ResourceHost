@@ -14,9 +14,5 @@ object FileManager {
 	fun getName(): String {
 		return getFile()?.name ?: ""
 	}
-
-	fun getPath(): String {
-		return getFile()?.path ?: ""
-	}
 }
 

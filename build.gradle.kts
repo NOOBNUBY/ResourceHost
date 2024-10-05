@@ -13,6 +13,7 @@ group = property("group")!!
 version = property("version")!!
 
 val paper_version: String by project
+val kyori_version: String by project
 
 repositories {
     mavenCentral()
@@ -35,6 +36,8 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:${paper_version}-R0.1-SNAPSHOT")
 	implementation("io.ktor:ktor-server-core-jvm")
 	implementation("io.ktor:ktor-server-netty-jvm")
+	implementation("net.kyori:adventure-api:${kyori_version}")
+	implementation("net.kyori:adventure-text-minimessage:${kyori_version}")
 }
 
 java {

@@ -1,31 +1,34 @@
 package com.noobnuby.plugin
 
-import com.noobnuby.plugin.commands.HelloBrigadier
 import com.noobnuby.plugin.events.Join
 import com.noobnuby.plugin.services.fileRouting
-import com.noobnuby.plugin.utils.fileName
+import com.noobnuby.plugin.utils.FileManager
+import com.noobnuby.plugin.utils.getSHA1
 import com.noobnuby.plugin.utils.toMini
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
 import org.bukkit.plugin.java.JavaPlugin
+import java.io.File
+import java.util.UUID
 import kotlin.math.log
 
 class Main : JavaPlugin() {
-    companion object { lateinit var instance: Main }
+    companion object {
+		lateinit var instance: Main
+		val uuid = UUID.randomUUID()
+	}
 	private val logPrefix = "<gradient:#9838ff:#00b3ff>[ResourceHost<b></b>]</gradient>"
 
     override fun onEnable() {
         instance = this
         saveDefaultConfig()
 		//[ Developed by noobnuby ]
-        HelloBrigadier.registerCommand()
+
+		logger.info(uuid.toString())
 
         server.pluginManager.apply {
             registerEvents(Join(),this@Main)
         }
-
-		logger.info(dataFolder.path)
-		logger.info(fileName())
 
 		componentLogger.info("$logPrefix Enable!".toMini())
 		if(config.getBoolean("enable-self-host")) {
