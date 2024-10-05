@@ -3,7 +3,7 @@ version: ${rootProject.version}
 api-version: 1.13
 main: com.noobnuby.plugin.Main
 description: Easier hosting your own resource pack
-website: https://me.noobnuby.com
+website: https://github.com/NOOBNUBY/ResourceHost
 author: noobnuby
 
 libraries:
