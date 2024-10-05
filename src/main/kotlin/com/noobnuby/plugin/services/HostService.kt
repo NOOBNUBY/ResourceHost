@@ -9,7 +9,6 @@ import io.ktor.server.routing.*
 import java.io.File
 
 fun Application.fileRouting() {
-	val hash = StringBuilder(40)
 	routing {
 		get("/${getSHA1(FileManager.getPath())}") {
 			val dir = File(Main.instance.dataFolder.path)
