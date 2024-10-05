@@ -2,7 +2,6 @@ package com.noobnuby.plugin
 
 import com.noobnuby.plugin.events.Join
 import com.noobnuby.plugin.services.fileRouting
-import com.noobnuby.plugin.utils.getIP
 import com.noobnuby.plugin.utils.toMini
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*
