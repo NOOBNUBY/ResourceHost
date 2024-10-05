@@ -1,6 +1,7 @@
 package com.noobnuby.plugin.services
 
 import com.noobnuby.plugin.Main
+import com.noobnuby.plugin.Main.Companion.uuid
 import com.noobnuby.plugin.utils.FileManager
 import com.noobnuby.plugin.utils.getSHA1
 import io.ktor.server.application.*
@@ -10,7 +11,7 @@ import java.io.File
 
 fun Application.fileRouting() {
 	routing {
-		get("/${getSHA1(FileManager.getPath())}") {
+		get("/$uuid") {
 			val dir = File(Main.instance.dataFolder.path)
 			val file = File(dir, FileManager.getName())
 			call.respondFile(file)
