@@ -7,7 +7,7 @@ import java.io.File
 object FileManager {
 	private val dir = File(Main.instance.dataFolder.path)
 
-	private fun getFile(): File? {
+	fun getFile(): File? {
 		return dir.listFiles()?.find { it.name.endsWith(".zip") }
 	}
 

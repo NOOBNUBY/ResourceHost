@@ -1,4 +1,3 @@
-import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -36,19 +35,21 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:${paper_version}-R0.1-SNAPSHOT")
 	implementation("io.ktor:ktor-server-core-jvm")
 	implementation("io.ktor:ktor-server-netty-jvm")
+	implementation("io.ktor:ktor-client-core-jvm")
+	implementation("io.ktor:ktor-client-cio-jvm")
 	implementation("net.kyori:adventure-api:${kyori_version}")
 	implementation("net.kyori:adventure-text-minimessage:${kyori_version}")
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_21
-    targetCompatibility = JavaVersion.VERSION_21
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 
-    toolchain.languageVersion.set(JavaLanguageVersion.of(21))
+    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
 }
 
 kotlin {
-    jvmToolchain(21)
+    jvmToolchain(17)
 }
 
 tasks {
@@ -59,7 +60,7 @@ tasks {
     withType<KotlinCompile> {
         compilerOptions {
             noJdk = false
-            jvmTarget.set(JvmTarget.JVM_21)
+            jvmTarget.set(JvmTarget.JVM_17)
         }
     }
 
@@ -76,21 +77,7 @@ tasks {
 		from(sourceSets["main"].output)
 	}
 
-    create<ShadowJar>("paperJar") {
-        archiveBaseName.set(rootProject.name)
-        archiveClassifier.set("")
-
-        from(sourceSets["main"].output)
-
-        doLast {
-            copy {
-                from(archiveFile)
-                into(File(rootDir, "run/plugins/"))
-            }
-        }
-    }
-
 	runServer {
-		minecraftVersion("1.21.1")
+		minecraftVersion("1.20.4")
 	}
 }
