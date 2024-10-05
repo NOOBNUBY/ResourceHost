@@ -1,0 +1,11 @@
+name: ${rootProject.name}
+version: ${rootProject.version}
+api-version: 1.13
+main: com.noobnuby.plugin.Main
+description: Easier hosting your own resource pack
+website: https://me.noobnuby.com
+author: noobnuby
+
+libraries:
+  - org.jetbrains.kotlin:kotlin-stdlib:2.0.0
+  - org.jetbrains.kotlin:kotlin-reflect:2.0.0

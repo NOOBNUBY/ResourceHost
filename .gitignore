@@ -1,0 +1,71 @@
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### IntelliJ IDEA ###
+.idea
+.idea/gradle.xml
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+.kotlin
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+### Paper Run ###
+/run/
+/run/arguments
+/run/cache
+/run/config
+/run/libraries
+/run/logs
+/run/plugins
+/run/versions
+/run/worlds
+/run/.server
+/run/banned-ips.json
+/run/banned-players.json
+/run/commands.yml
+/run/help.yml
+/run/permissions.yml
+/run/start.sh
+/run/startDeploy
+/run/startSetup
+/run/usercache.json
+/run/version_history.json
+/run/.console_history
+/run/whitelist.json
+/run/server.jar
+/run/start.bat
+
+### Mac OS ###
+.DS_Store

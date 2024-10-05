@@ -1,0 +1,2 @@
+enable-self-host: true
+self-host-port: 8163
